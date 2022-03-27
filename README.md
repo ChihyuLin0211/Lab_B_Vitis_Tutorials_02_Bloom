@@ -9,6 +9,7 @@
 A Bloom filter is a space-efficient probabilistic data structure that is used to test whether an element is a member of a set.
 
 In general, a Bloom filter application has use cases in data analytics, such as browsing through unstructured email and text file data to identify the documents that are closely associated with a specific user and send notifications accordingly.
+
 ![](https://i.imgur.com/Hluo1JB.png)
 
 In this tutorial, each document consists of an array of words where: each word is a 32-bit unsigned integer comprised of a 24-bit word ID and an 8-bit integer representing the frequency. The search array consists of words of interest to the user, and represents a smaller set of 24-bit word IDs, where each word ID has a weight associated with it, determining the importance of the word.
@@ -43,11 +44,13 @@ $ ./host 10000
 Here, I run the application on CPU and actual hardware with different number of kernel (PF=2, 4, 8, 16).
 Example of application running on CPU:
 ![](https://i.imgur.com/r81qcS8.png)
+
 $Throughput = Total data/Total time
 = 139.506 MB / 171.8735ms = 811.68 MBps$
 
 Example of application running on FPGA:
 ![](https://i.imgur.com/r3NIKak.png)
+
 $Throughput = Total data/Total time
 = 139.506 MB / 145.8065ms = 956.79 MBps$
 
@@ -58,7 +61,9 @@ We can now use the actual hardware accelerated throughput then normalize to CPU 
 Furthermore, we can use Vitis Analyzer to see additional information such as application timeline, resource utilization, etc.
 
 Example of application timeline (kernel/PF=2)
+
 ![](https://i.imgur.com/JKEO1b6.png)
 
 Example of resource utilization (kernel/PF=8)
+
 ![](https://i.imgur.com/12Garx1.png)
