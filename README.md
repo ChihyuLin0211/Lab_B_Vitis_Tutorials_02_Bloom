@@ -39,7 +39,7 @@ $ cd build/single_buffer/kernel_1/hw
 $ ./host 10000
 ```
 
-# Result / Analysis
+# Result & Analysis
 Here, I run the application on CPU and actual hardware with different number of kernel (PF=2, 4, 8, 16).
 Example of application running on CPU:
 ![](https://i.imgur.com/r81qcS8.png)
